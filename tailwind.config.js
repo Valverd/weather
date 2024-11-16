@@ -9,8 +9,15 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
+      maxWidth:{
+        container: '1450px'
+      },
+      boxShadow:{
+        customized: '0 0 5px #aaa',
+      }
     },
   },
   plugins: [],
+  darkMode: 'class'
 }
 
