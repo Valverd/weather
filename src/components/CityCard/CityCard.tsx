@@ -4,7 +4,7 @@ import { MdDeviceThermostat } from "react-icons/md";
 
 export default function CityCard() {
     return (
-        <div className="w-2/3 bg-gradient-to-br from-slate-200 to-slate-400 dark:bg-slate-800 shadow-lg mt-10 m-auto rounded-lg p-4">
+        <div className="w-[800px] bg-gradient-to-br from-slate-200 to-slate-400 dark:bg-gradient-to-br dark:from-slate-600 dark:to-slate-500 shadow-lg mt-10 m-auto rounded-lg p-4">
             <p className="flex items-center">Piracicaba <IoLocation size={20} /></p>
             <div className="flex justify-center items-center gap-4 my-24">
                 <p>Nov. 23, Sáb</p>

@@ -7,7 +7,12 @@ export default function Home() {
         <>
             <Layout>
                 <SearchBar />
-                <CityCard />
+                
+                <div className="flex">
+                    <CityCard />
+                    <CityCard />
+                    <CityCard />
+                </div>
             </Layout>
         </>
     )
