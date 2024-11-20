@@ -5,7 +5,7 @@ import CityCard from '../CityCard/CityCard';
 
 export default () => {
   return (
-    <div className='max-w-7xl mt-4'>
+    <div className='max-w-7xl mt-4 m-auto'>
       <Swiper
         modules={[Navigation, EffectCoverflow]}
         spaceBetween={500}
