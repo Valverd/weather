@@ -1,4 +1,5 @@
 import Carousel from "../../components/Carousel/Carousel";
+import CarouselHourly from "../../components/CarouselHourly/CarouselHourly";
 import CityCard from "../../components/CityCard/CityCard";
 import Hourly from "../../components/Hourly/Hourly";
 import Layout from "../../components/Layout/Layout";
@@ -10,7 +11,7 @@ export default function Home() {
             <Layout>
                 <SearchBar />
                 <Carousel />
-                <Hourly />
+                <CarouselHourly />
             </Layout>
         </>
     )
