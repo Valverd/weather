@@ -1,0 +1,41 @@
+[33mcommit cf70dc923aa26116f07aac9383f62afdf5654e25[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Renan <renanvgmartins@hotmail.com>
+Date:   Wed Nov 20 22:51:04 2024 -0300
+
+    Espaçamento do Carrossel de horas
+
+[33mcommit fb34c25a257c9dbecf200bdcd28bb7de19a6a108[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Renan <renanvgmartins@hotmail.com>
+Date:   Wed Nov 20 15:43:27 2024 -0300
+
+    Criação de carrossel das horas
+
+[33mcommit 33ca8aa7d05125e9c105ccf838f690f23980e91b[m
+Author: Renan Valverde <renanvgmartisn@hotmail.com>
+Date:   Wed Nov 20 16:57:02 2024 +0000
+
+    Inicio do componente de horas
+
+[33mcommit 2d1fa1e62cbdfb6d0a57a517508e6c7ef4bad3a9[m
+Author: Renan <renanvgmartins@hotmail.com>
+Date:   Mon Nov 18 20:05:29 2024 -0300
+
+    Finalização de Carrossel com Swiper
+
+[33mcommit 12f02fc30b76913a65ead912665f3e8ea1ec098c[m
+Author: Renan Valverde <renanvgmartisn@hotmail.com>
+Date:   Mon Nov 18 18:02:46 2024 +0000
+
+    Criação de Carrossel
+
+[33mcommit 9d562ded5d8b162ff3219455f444f2de3c9410f9[m
+Author: Renan <renanvgmartins@hotmail.com>
+Date:   Sat Nov 16 17:54:52 2024 -0300
+
+    finalização de nav, dark-mode, componentes básicos como searchBar e Card principal.
+
+[33mcommit bf9783b387ae6d636976ed0332d1420954ae5dfe[m
+Author: Renan <renanvgmartins@hotmail.com>
+Date:   Wed Nov 13 22:47:13 2024 -0300
+
+    Criação do Projeto
