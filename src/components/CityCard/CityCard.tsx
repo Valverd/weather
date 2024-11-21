@@ -1,3 +1,4 @@
+import { FaRegSun } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
 import { MdDeviceThermostat } from "react-icons/md";
 
@@ -24,13 +25,15 @@ import { MdDeviceThermostat } from "react-icons/md";
 
 export default function CityCard() {
     return (
-        <div className={`w-[800px] ${sun} ${textColor} shadow-lg mt-10 m-auto rounded-lg p-4`}>
+        <div className={`w-[800px] ${sunAndClouds} ${textColor} shadow-lg mt-10 m-auto rounded-lg p-4`}>
             <p className="flex items-center justify-end">Piracicaba <IoLocation size={20} /></p>
             <div className="flex justify-center items-center gap-4 my-24">
                 <p>Nov. 23, Sáb</p>
-                <div className="flex">
+                <div className="flex gap-2 items-center">
                     <MdDeviceThermostat size={70} />
                     <h1 className="text-7xl">25°C</h1>
+                    <FaRegSun size={70}/>
+
                 </div>
             </div>
             <div className="flex justify-around">

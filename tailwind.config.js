@@ -14,6 +14,7 @@ export default {
       },
       boxShadow:{
         customized: '0 0 5px #aaa',
+        customizedDark: '0 0 8px #333',
       }
     },
   },
