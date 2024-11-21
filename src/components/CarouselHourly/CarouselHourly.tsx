@@ -4,29 +4,24 @@ import { Navigation } from 'swiper/modules'
 
 export default function CarouselHourly() {
     return (
-        <div className='w-full mt-12 m-auto'>
-            <Swiper
-                modules={[Navigation]}
-                slidesPerView={10}
-                navigation
-            >
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-                <SwiperSlide><Hourly /></SwiperSlide>
-            </Swiper>
-        </div>
+        <Swiper
+            modules={[Navigation]}
+            slidesPerView={8}
+            navigation
+            className="mt-14"
+            slidesOffsetBefore={58}
+        >
+            <SwiperSlide ><Hourly /></SwiperSlide>
+            <SwiperSlide><Hourly /></SwiperSlide>
+            <SwiperSlide><Hourly /></SwiperSlide>
+            <SwiperSlide><Hourly /></SwiperSlide>
+            <SwiperSlide><Hourly /></SwiperSlide>
+            <SwiperSlide><Hourly /></SwiperSlide>
+            <SwiperSlide><Hourly /></SwiperSlide>
+            <SwiperSlide><Hourly /></SwiperSlide>
+            <SwiperSlide><Hourly /></SwiperSlide>
+            <SwiperSlide><Hourly /></SwiperSlide>
+            <SwiperSlide><Hourly /></SwiperSlide>
+        </Swiper>
     )
 }
