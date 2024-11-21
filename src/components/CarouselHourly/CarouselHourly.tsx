@@ -4,57 +4,63 @@ import { Navigation } from 'swiper/modules'
 
 export default function CarouselHourly() {
     return (
-        <div className='w-10/12 mt-20 m-auto'>
+        <div className='max-w-6xl my-40 m-auto'>
             <Swiper
                 modules={[Navigation]}
-                slidesPerView={10}
+                spaceBetween={30}
+                slidesOffsetAfter={50}
+                slidesOffsetBefore={50}
                 navigation
                 breakpoints={{
-                    250:{
+                    250: {
                         slidesPerView: 2,
-                        centeredSlides: true
+                        centeredSlides: true,
+                        slidesOffsetAfter: 0,
+                        slidesOffsetBefore: 0
                     },
-                    521:{
+                    521: {
                         slidesPerView: 3,
-                        centeredSlides: true
+                        centeredSlides: false,
                     },
-                    672:{
+                    700: {
                         slidesPerView: 4,
-                        centeredSlides: true
+                        centeredSlides: false,
                     },
-                    896:{
-                        slidesPerView: 6,
+                    896: {
+                        slidesPerView: 5,
+                        centeredSlides: false,
                     },
-                    1152:{
-                        slidesPerView: 8,
+                    1250: {
+                        slidesPerView: 7,
+                        centeredSlides: false,
                     },
                 }}
             >
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{width: '112px', height: '112px'}}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
             </Swiper>
         </div>
     )
