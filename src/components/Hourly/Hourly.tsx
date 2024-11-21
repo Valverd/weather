@@ -6,7 +6,7 @@ export default function Hourly() {
     const textColor = "text-white dark:text-black"
 
     return (
-        <div className={`w-28 ${sun} ${textColor} h-28 shadow-lg rounded-lg flex justify-center items-center`}>
+        <div className={`w-28 h-28 ${sun} ${textColor} shadow-lg rounded-lg flex justify-center items-center`}>
             teste
         </div>
     )
