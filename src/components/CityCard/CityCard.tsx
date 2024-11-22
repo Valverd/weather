@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FaRegSun } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
 import { MdDeviceThermostat } from "react-icons/md";
@@ -24,6 +25,12 @@ import { MdDeviceThermostat } from "react-icons/md";
 
 
 export default function CityCard() {
+    const apiKey = process.env.REACT_APP_API_KEY;
+
+    useEffect(() => {
+        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=${apiKey}`).then((res) => console.log(res))
+    }, [])
+
     return (
         <div className={`w-[800px] ${sunAndClouds} ${textColor} shadow-lg mt-10 m-auto rounded-lg p-4`}>
             <p className="flex items-center justify-end">Piracicaba <IoLocation size={20} /></p>
