@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Nav from "../Nav/Nav";
 import { useContext } from "react";
-import { DarkContext } from "../../contexts/dark";
+import { Context } from "../../contexts/Context";
 import Footer from "../Footer/Footer";
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 }
 
 export default function Layout({ children }: Props) {
-    const { dark } = useContext(DarkContext)
+    const { dark } = useContext(Context)
 
     return (
         <div className={dark ? "dark" : ""}>

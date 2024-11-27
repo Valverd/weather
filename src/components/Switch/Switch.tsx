@@ -1,9 +1,9 @@
 import { HiOutlineMoon } from "react-icons/hi2";
 import { useContext } from "react";
-import { DarkContext } from "../../contexts/dark";
+import { Context } from "../../contexts/Context";
 
 export default function Switch() {
-    const { dark, setDark } = useContext(DarkContext)
+    const { dark, setDark } = useContext(Context)
 
     return (
         <div className="flex items-center gap-1">
