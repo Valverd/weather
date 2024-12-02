@@ -35,7 +35,7 @@ export default () => {
         {
           cityCards?.map((city: object) => {
             return (
-              <SwiperSlide><CityCard city={city} /></SwiperSlide>
+              <SwiperSlide><CityCard /></SwiperSlide>
             )
           })
         }
