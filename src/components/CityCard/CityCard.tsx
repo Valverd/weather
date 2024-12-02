@@ -1,3 +1,4 @@
+import { PropsCity } from "../../types/CityType";
 import { FaRegSun } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
 import { MdDeviceThermostat } from "react-icons/md";
@@ -7,7 +8,7 @@ const cloudy = "bg-gradient-to-br from-slate-200 to-slate-400 dark:bg-gradient-t
 const rain = "bg-gradient-to-br from-slate-600 to-slate-300 dark:from-slate-700 dark:to-slate-400"
 const textColor = "text-white dark:text-black"
 
-export default function CityCard() {
+export default function CityCard(city: object) {
 
     return (
         <div className={`w-[800px] ${cloudy} ${textColor} shadow-lg mt-10 m-auto rounded-lg p-4`}>
@@ -16,7 +17,7 @@ export default function CityCard() {
                 <p>Nov. 23, Sáb</p>
                 <div className="flex gap-2 items-center">
                     <MdDeviceThermostat size={70} />
-                    <h1 className="text-7xl">25°C</h1>
+                    <h1 className="text-7xl"></h1>
                     <FaRegSun size={70} />
 
                 </div>
@@ -27,16 +28,16 @@ export default function CityCard() {
                     <p>99%</p>
                 </div>
                 <div className="text-center">
-                    <p>Visibiliade</p>
-                    <p>8km</p>
+                    <p>Visibilidade</p>
+                    <p>8 km</p>
                 </div>
                 <div className="text-center">
                     <p>Pressão do Ar</p>
-                    <p>1005hPa</p>
+                    <p>1005 hPa</p>
                 </div>
                 <div className="text-center">
                     <p>Vento</p>
-                    <p>2mph</p>
+                    <p>2 m/s</p>
                 </div>
             </div>
             <div>

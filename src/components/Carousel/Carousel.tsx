@@ -2,10 +2,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, EffectCoverflow } from 'swiper/modules';
 import 'swiper/swiper-bundle.css'
 import CityCard from '../CityCard/CityCard';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import Modal from '../Modal/Modal';
+import { Context } from '../../contexts/Context';
 
 export default () => {
+
+  const { cityCards } = useContext(Context)
+
+  useEffect(() => {
+    console.log(cityCards)
+  }, [cityCards])
 
   return (
     <div className='max-w-7xl mt-4 m-auto'>
@@ -25,13 +32,13 @@ export default () => {
         }}
         className='w-full'
       >
-        <SwiperSlide><CityCard /></SwiperSlide>
-        <SwiperSlide><CityCard /></SwiperSlide>
-        <SwiperSlide><CityCard /></SwiperSlide>
-        <SwiperSlide><CityCard /></SwiperSlide>
-        <SwiperSlide><CityCard /></SwiperSlide>
-        <SwiperSlide><CityCard /></SwiperSlide>
-        <SwiperSlide><CityCard /></SwiperSlide>
+        {
+          cityCards?.map((city: object) => {
+            return (
+              <SwiperSlide><CityCard city={city} /></SwiperSlide>
+            )
+          })
+        }
       </Swiper>
       <Modal />
     </div>
