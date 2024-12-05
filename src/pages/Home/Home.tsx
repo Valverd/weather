@@ -1,7 +1,5 @@
 import Carousel from "../../components/Carousel/Carousel";
 import CarouselHourly from "../../components/CarouselHourly/CarouselHourly";
-import CityCard from "../../components/CityCard/CityCard";
-import Hourly from "../../components/Hourly/Hourly";
 import Layout from "../../components/Layout/Layout";
 import SearchBar from "../../components/SearchBar/SearchBar";
 

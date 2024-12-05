@@ -19,6 +19,8 @@ export interface PropsCity {
     lat: string
     lon: string
     place_id: string
+    name: string
+    state: string
     timezone: string
     units: string
 }

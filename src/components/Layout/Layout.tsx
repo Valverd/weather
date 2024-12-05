@@ -13,9 +13,9 @@ export default function Layout({ children }: Props) {
 
     return (
         <div className={dark ? "dark" : ""}>
-            <div className="dark:bg-slate-700 dark:text-white">
+            <div className="bg-zinc-100 dark:bg-slate-700 dark:text-white">
                 <Nav />
-                <section className="max-w-container m-auto font-poppins pt-24 px-6">
+                <section className="max-w-container min-h-[calc(100vh-78px)] m-auto font-poppins pt-24 px-6">
                     {children}
                 </section>
                 <Footer />
