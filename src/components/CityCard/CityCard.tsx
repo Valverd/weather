@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { PropsCity } from '../../types/types'
 import { FaRegSun } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
@@ -9,6 +10,17 @@ const rain = "bg-gradient-to-br from-slate-600 to-slate-300 dark:from-slate-700 
 const textColor = "text-white dark:text-black"
 
 export default function CityCard({ city }: { city: PropsCity}) {
+    const [weather, setWeather] = useState('')
+
+    switch(city.current.summary){
+        case 'Sunny':
+        case 'Partly sunny':
+        case 'Mostly sunny':
+            setWeather(sun)
+        case 'Mostly cloudy':
+        case 'Cloudy':
+        case 'Overcast':
+    }
 
     function capitalizeWords(text: string) {
         if (!text) return "";
@@ -25,18 +37,18 @@ export default function CityCard({ city }: { city: PropsCity}) {
                 <p>{capitalizeWords(new Date().toLocaleDateString('pt-BR', {month: 'short', day:'2-digit', weekday: 'short'}))}</p>
                 <div className="flex gap-2 items-center">
                     <MdDeviceThermostat size={70} />
-                    <h1 className="text-7xl">{city.current.temperature.toFixed(1)}°C</h1>
+                    <h1 className="text-7xl">{Math.floor(city.current.temperature)}°C</h1>
                     <FaRegSun size={70} />
                 </div>
             </div>
             <div className="flex justify-around">
                 <div className="text-center">
-                    <p>Umidade</p>
-                    <p>99%{}</p>
+                    <p>Precipitação</p>
+                    <p>{city.current.precipitation.total} %</p>
                 </div>
                 <div className="text-center">
-                    <p>Visibilidade</p>
-                    <p>8 km</p>
+                    <p>Cobertura de Nuvens</p>
+                    <p>{city.current.cloud_cover} %</p>
                 </div>
                 <div className="text-center">
                     <p>Pressão do Ar</p>
@@ -44,7 +56,7 @@ export default function CityCard({ city }: { city: PropsCity}) {
                 </div>
                 <div className="text-center">
                     <p>Vento</p>
-                    <p>2 m/s</p>
+                    <p>{city.current.wind.speed} m/s</p>
                 </div>
             </div>
             <div>

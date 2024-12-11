@@ -43,7 +43,6 @@ export default function Modal() {
                 data.name = city.name
                 data.state = city.adm_area1
                 setCityCards((cards) => cards ? [...cards, data] : [data])
-                console.log(data)
                 setShowModal(!showModal)
             })
     }
