@@ -32,9 +32,9 @@ export default () => {
       >
 
         {
-          cityCards?.map((city) => {
+          cityCards?.map((city, i) => {
             return (
-              <SwiperSlide><CityCard city={city} /></SwiperSlide>
+              <SwiperSlide key={i}><CityCard city={city} /></SwiperSlide>
             )
           })
         }

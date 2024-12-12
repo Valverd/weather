@@ -1,8 +1,23 @@
 import Hourly from "../Hourly/Hourly";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from 'swiper/modules'
+import { Context } from "../../contexts/Context";
+import { useContext, useEffect, useState } from "react";
+
 
 export default function CarouselHourly() {
+    const [hours, setHours] = useState()
+    const apiKey = import.meta.env.VITE_API_KEY
+    const { cityID } = useContext(Context)
+
+
+    useEffect(() => {
+        fetch(`https://www.meteosource.com/api/v1/free/point?place_id=${cityID}&sections=hourly&timezone=America/Sao_Paulo&language=en&units=metric&key=${apiKey}`).then(res => res.json())
+            .then((data) => {
+                setHours(data.hourly.data)
+            })
+    }, [cityID])
+    
     return (
         <div className='max-w-6xl my-40 m-auto'>
             <Swiper
@@ -36,31 +51,11 @@ export default function CarouselHourly() {
                     },
                 }}
             >
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
-                <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                {
+                    hours && hours.map(() => {
+                        return <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                    })
+                }
             </Swiper>
         </div>
     )

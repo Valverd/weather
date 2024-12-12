@@ -17,7 +17,7 @@ interface PropsCityFound {
 }
 
 export default function Modal() {
-    const { showModal, setShowModal, searchCity, setCityCards } = useContext(Context)
+    const { showModal, setShowModal, searchCity, setCityCards, setCityID } = useContext(Context)
     const apiKey = import.meta.env.VITE_API_KEY
     const [cityFound, setCityFound] = useState<boolean>()
     const [cities, setCities] = useState([])
@@ -32,7 +32,6 @@ export default function Modal() {
                 data.length = 5
                 setCityFound(true)
                 setCities(data)
-                console.log(data)
             }))
     }, [searchCity])
 
@@ -43,6 +42,7 @@ export default function Modal() {
                 data.name = city.name
                 data.state = city.adm_area1
                 setCityCards((cards) => cards ? [...cards, data] : [data])
+                setCityID(city.place_id)
                 setShowModal(!showModal)
             })
     }

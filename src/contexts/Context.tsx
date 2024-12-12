@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react";
+import React, { createContext, ReactNode, useState } from "react";
 import { PropsCity } from '../types/types'
 
 type PropsChildren = {
@@ -14,6 +14,8 @@ type ContextProps = {
     setSearchCity: React.Dispatch<React.SetStateAction<string>>
     cityCards: PropsCity[] | null,
     setCityCards: React.Dispatch<React.SetStateAction<PropsCity[] | null>>
+    cityID: string,
+    setCityID: React.Dispatch<React.SetStateAction<string>>
 }
 
 export const Context = createContext<ContextProps>({} as ContextProps)
@@ -23,9 +25,10 @@ export function ContextProvider({ children }: PropsChildren) {
     const [showModal, setShowModal] = useState(false)
     const [searchCity, setSearchCity] = useState('')
     const [cityCards, setCityCards] = useState<PropsCity[] | null>(null)
+    const [cityID, setCityID] = useState('')
 
     return (
-        <Context.Provider value={{ dark, setDark, showModal, setShowModal, searchCity, setSearchCity, cityCards, setCityCards }}>
+        <Context.Provider value={{ dark, setDark, showModal, setShowModal, searchCity, setSearchCity, cityCards, setCityCards, cityID, setCityID }}>
             {children}
         </Context.Provider>
     )
