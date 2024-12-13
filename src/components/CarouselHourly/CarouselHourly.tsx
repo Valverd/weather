@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from "react";
 
 
 export default function CarouselHourly() {
-    const [hours, setHours] = useState()
+    const [hours, setHours] = useState<any[]>()
     const apiKey = import.meta.env.VITE_API_KEY
     const { cityID } = useContext(Context)
 
@@ -52,9 +52,10 @@ export default function CarouselHourly() {
                 }}
             >
                 {
-                    hours && hours.map(() => {
-                        return <SwiperSlide style={{ width: '112px', height: '112px' }}><Hourly /></SwiperSlide>
+                    hours && hours.map((hour, i) => {
+                        return <SwiperSlide key={i}><Hourly hour={hour} /></SwiperSlide>
                     })
+                    // style={{ width: '112px', height: '124px' }}
                 }
             </Swiper>
         </div>

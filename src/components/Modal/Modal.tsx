@@ -44,6 +44,7 @@ export default function Modal() {
                 setCityCards((cards) => cards ? [...cards, data] : [data])
                 setCityID(city.place_id)
                 setShowModal(!showModal)
+                console.log(data)
             })
     }
 

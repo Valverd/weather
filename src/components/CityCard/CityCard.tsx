@@ -12,14 +12,21 @@ import { Context } from '../../contexts/Context';
 const sun = "bg-gradient-to-br from-yellow-200 to-sky-500 to-50%"
 const cloudy = "bg-gradient-to-br from-slate-200 to-slate-400 dark:bg-gradient-to-br dark:to-slate-600 dark:from-slate-300"
 const rain = "bg-gradient-to-br from-slate-600 to-slate-300 dark:from-slate-700 dark:to-slate-400"
+const night = "bg-gradient-to-br from-gray-600 to-blue-900 to-40%"
+const nightCloudy = "bg-gradient-to-br from-gray-600 via-blue-900 to-slate-600 to-90%"
+const nightRain = "bg-gradient-to-br from-gray-600 via-slate-800 to-slate-600 to-90%"
 
 export default function CityCard({ city }: { city: PropsCity }) {
     const [weather, setWeather] = useState('')
     const [icon, setIcon] = useState<ComponentType<{ size?: number }>>()
     const { setCityID } = useContext(Context)
+    const hour = new Date().getHours()
 
     useEffect(() => {
         switch (city.current.summary) {
+            case 'Clear':
+            case 'Mostly clear':
+            case 'Partly clear':
             case 'Sunny':
             case 'Partly sunny':
             case 'Mostly sunny':
