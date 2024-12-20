@@ -10,14 +10,18 @@ export default function CarouselHourly() {
     const apiKey = import.meta.env.VITE_API_KEY
     const { cityID } = useContext(Context)
 
-
     useEffect(() => {
-        fetch(`https://www.meteosource.com/api/v1/free/point?place_id=${cityID}&sections=hourly&timezone=America/Sao_Paulo&language=en&units=metric&key=${apiKey}`).then(res => res.json())
-            .then((data) => {
-                setHours(data.hourly.data)
-            })
+
+        async function updateHours() {
+            await fetch(`https://www.meteosource.com/api/v1/free/point?place_id=${cityID}&sections=hourly&timezone=America/Sao_Paulo&units=metric&key=${apiKey}`).then(res => res.json())
+                .then((data) => {
+                    setHours(data.hourly.data)
+                })
+        }
+
+        updateHours()
     }, [cityID])
-    
+
     return (
         <div className='max-w-6xl my-40 m-auto'>
             <Swiper
@@ -53,9 +57,8 @@ export default function CarouselHourly() {
             >
                 {
                     hours && hours.map((hour, i) => {
-                        return <SwiperSlide key={i}><Hourly hour={hour} /></SwiperSlide>
+                        return <SwiperSlide key={i}><Hourly information={hour} /></SwiperSlide>
                     })
-                    // style={{ width: '112px', height: '124px' }}
                 }
             </Swiper>
         </div>

@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, EffectCoverflow } from 'swiper/modules';
 import 'swiper/swiper-bundle.css'
 import CityCard from '../CityCard/CityCard';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Modal from '../Modal/Modal';
 import { Context } from '../../contexts/Context';
 import { PropsCity } from '../../types/types'
@@ -10,7 +10,16 @@ import { PropsCity } from '../../types/types'
 
 export default () => {
 
+  const [index, setIndex] = useState<number>()
+  
+  const { setCityID } = useContext(Context)
   const { cityCards }: { cityCards: PropsCity[] | null } = useContext(Context);
+
+  useEffect(() => {
+    if(cityCards && index !== undefined){
+      setCityID(cityCards[index].place_id)
+    }
+  }, [index])
 
   if (cityCards) {
     return (
@@ -30,6 +39,14 @@ export default () => {
             stretch: 0
           }}
           className='w-full'
+          onSlidesLengthChange={(slide) => {
+            slide.activeIndex = slide.slides.length - 1
+            setIndex(slide.activeIndex)
+            console.log(slide.activeIndex)
+          }}
+          onSlideChange={(slide) => {
+            setIndex(slide.activeIndex)
+          }}
         >
 
           {

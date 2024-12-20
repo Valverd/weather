@@ -7,6 +7,8 @@ import { IoPartlySunnyOutline } from "react-icons/io5";
 import { IoMdCloudOutline } from "react-icons/io";
 import { IoRainyOutline } from "react-icons/io5";
 import { IoIosThunderstorm } from "react-icons/io";
+import { FiMoon } from "react-icons/fi";
+import { LuCloudMoon } from "react-icons/lu";
 import { Context } from '../../contexts/Context';
 
 const sun = "bg-gradient-to-br from-yellow-200 to-sky-500 to-50%"
@@ -23,58 +25,113 @@ export default function CityCard({ city }: { city: PropsCity }) {
     const hour = new Date().getHours()
 
     useEffect(() => {
-        switch (city.current.summary) {
-            case 'Clear':
-            case 'Mostly clear':
-            case 'Partly clear':
-            case 'Sunny':
-            case 'Partly sunny':
-            case 'Mostly sunny':
-                setWeather(sun)
-                break
-            case 'Mostly cloudy':
-            case 'Cloudy':
-            case 'Overcast':
-                setWeather(cloudy)
-                break
-            case 'Fog':
-            case 'Light rain':
-            case 'Rain':
-            case 'Possible rain':
-            case 'Rain shower':
-            case 'Thunderstorm':
-                setWeather(rain)
-                break
-            default:
-                setWeather(sun)
+        if (hour < 19 && hour > 6) {
+
+            switch (city.current.summary) {
+                case 'Clear':
+                case 'Mostly clear':
+                case 'Partly clear':
+                case 'Sunny':
+                case 'Partly sunny':
+                case 'Mostly sunny':
+                    setWeather(sun)
+                    break
+                case 'Mostly cloudy':
+                case 'Cloudy':
+                case 'Overcast':
+                    setWeather(cloudy)
+                    break
+                case 'Fog':
+                case 'Light rain':
+                case 'Rain':
+                case 'Possible rain':
+                case 'Rain shower':
+                case 'Thunderstorm':
+                    setWeather(rain)
+                    break
+                default:
+                    setWeather(sun)
+            }
+
+            switch (city.current.summary) {
+                case 'Sunny':
+                case 'Mostly sunny':
+                    setIcon(() => IoSunnyOutline)
+                    break
+                case 'Partly sunny':
+                case 'Mostly cloudy':
+                    setIcon(() => IoPartlySunnyOutline)
+                    break
+                case 'Cloudy':
+                case 'Overcast':
+                    setIcon(() => IoMdCloudOutline)
+                    break
+                case 'Fog':
+                case 'Light rain':
+                case 'Rain':
+                case 'Possible rain':
+                case 'Rain shower':
+                    setIcon(() => IoRainyOutline)
+                    break
+                case 'Thunderstorm':
+                    setIcon(() => IoIosThunderstorm)
+                    break
+                default:
+                    setIcon(() => IoSunnyOutline)
+            }
+        } else {
+            switch (city.current.summary) {
+                case 'Clear':
+                case 'Partly clear':
+                case 'Mostly clear':
+                    setWeather(night)
+                    break
+                case 'Mostly cloudy':
+                case 'Cloudy':
+                case 'Overcast':
+                    setWeather(nightCloudy)
+                    break
+                case 'Fog':
+                case 'Light rain':
+                case 'Rain':
+                case 'Possible rain':
+                case 'Rain shower':
+                case 'Thunderstorm':
+                    setWeather(nightRain)
+                    break
+                default:
+                    setWeather(night)
+            }
+
+            switch (city.current.summary) {
+                case 'Clear':
+                case 'Mostly clear':
+                    setIcon(() => FiMoon)
+                    break
+                case 'Partly clear':
+                case 'Mostly cloudy':
+                    setIcon(() => LuCloudMoon)
+                    break
+                case 'Cloudy':
+                case 'Overcast':
+                    setIcon(() => IoMdCloudOutline)
+                    break
+                case 'Fog':
+                case 'Light rain':
+                case 'Rain':
+                case 'Possible rain':
+                case 'Rain shower':
+                    setIcon(() => IoRainyOutline)
+                    break
+                case 'Thunderstorm':
+                    setIcon(() => IoIosThunderstorm)
+                    break
+                default:
+                    setIcon(() => IoSunnyOutline)
+            }
+
         }
 
-        switch (city.current.summary) {
-            case 'Sunny':
-            case 'Mostly sunny':
-                setIcon(() => IoSunnyOutline)
-                break
-            case 'Partly sunny':
-            case 'Mostly cloudy':
-                setIcon(() => IoPartlySunnyOutline)
-                break
-            case 'Cloudy':
-            case 'Overcast':
-                setIcon(() => IoMdCloudOutline)
-                break
-            case 'Fog':
-            case 'Light rain':
-            case 'Rain':
-            case 'Possible rain':
-            case 'Rain shower':
-                setIcon(() => IoRainyOutline)
-                break
-            case 'Thunderstorm':
-                setIcon(() => IoIosThunderstorm)
-                break
-            default:
-                setIcon(() => IoSunnyOutline)
-        }
     }, [])
 
 
