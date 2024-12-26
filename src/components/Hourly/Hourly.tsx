@@ -7,6 +7,7 @@ import { IoRainyOutline } from "react-icons/io5";
 import { IoIosThunderstorm } from "react-icons/io";
 import { FiMoon } from "react-icons/fi";
 import { LuCloudMoon } from "react-icons/lu";
+import { hour } from "../../types/types";
 
 
 const sun = "bg-gradient-to-br from-yellow-200 to-sky-500 to-50%"
@@ -16,10 +17,9 @@ const night = "bg-gradient-to-br from-gray-600 to-blue-900 to-40%"
 const nightCloudy = "bg-gradient-to-br from-gray-600 via-blue-900 to-slate-600 to-90%"
 const nightRain = "bg-gradient-to-br from-gray-600 via-slate-800 to-slate-600 to-90%"
 
-export default function Hourly({ information }: any) {
-    const { cityID } = useContext(Context)
+export default function Hourly({ information }: { information: hour }) {
     const [weather, setWeather] = useState('')
-    const [hour, setHour] = useState<number>()
+    const hour = new Date(information.date).getHours()
     const [icon, setIcon] = useState<ComponentType<{ size?: number }>>()
 
 
@@ -32,9 +32,8 @@ export default function Hourly({ information }: any) {
     }
 
     useEffect(() => {
-        setHour(new Date(information.date).getHours())
-        console.log(information.temperature)
-        if (hour && hour < 19 && hour >= 7) {
+
+        if (hour < 19 && hour >= 7) {
             switch (information.summary) {
                 case 'Sunny':
                 case 'Mostly sunny':
@@ -136,7 +135,8 @@ export default function Hourly({ information }: any) {
             }
 
         }
-    }, [cityID])
+
+    }, [information])
 
 
     return (

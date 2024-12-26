@@ -16,6 +16,10 @@ export interface PropsCity {
         }
     }
     daily: null
+    elevation: number
+    hourly: {
+        data: hour[]
+    }
     lat: string
     lon: string
     place_id: string
@@ -23,4 +27,24 @@ export interface PropsCity {
     state: string
     timezone: string
     units: string
+}
+
+export interface hour {
+    cloud_cover: {
+        total: number
+    }
+    date: string
+    icon: number
+    precipitation: {
+        total: number
+        type: string
+    }
+    summary: string
+    temperature: number
+    weather: string
+    wind: {
+        speed: number
+        dir: string
+        angle: number
+    }
 }

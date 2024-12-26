@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, EffectCoverflow } from 'swiper/modules';
+import { Navigation, EffectCoverflow, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css'
 import CityCard from '../CityCard/CityCard';
 import { useContext, useEffect, useState } from 'react';
@@ -11,12 +11,12 @@ import { PropsCity } from '../../types/types'
 export default () => {
 
   const [index, setIndex] = useState<number>()
-  
+
   const { setCityID } = useContext(Context)
   const { cityCards }: { cityCards: PropsCity[] | null } = useContext(Context);
 
   useEffect(() => {
-    if(cityCards && index !== undefined){
+    if (cityCards && index !== undefined) {
       setCityID(cityCards[index].place_id)
     }
   }, [index])
@@ -31,18 +31,34 @@ export default () => {
           navigation
           effect='coverflow'
           coverflowEffect={{
-            depth: 1000,
-            modifier: 1,
-            rotate: 50,
-            scale: 2,
             slideShadows: false,
-            stretch: 0
+          }}
+          breakpoints={{
+            200: {
+              navigation: {
+                enabled: false
+              }
+            },
+            490: {
+              navigation: {
+                enabled: true
+              }
+            },
+            850: {
+              coverflowEffect: {
+                depth: 1000,
+                modifier: 1,
+                rotate: 50,
+                scale: 2,
+                stretch: 0
+              }
+
+            }
           }}
           className='w-full'
           onSlidesLengthChange={(slide) => {
             slide.activeIndex = slide.slides.length - 1
             setIndex(slide.activeIndex)
-            console.log(slide.activeIndex)
           }}
           onSlideChange={(slide) => {
             setIndex(slide.activeIndex)
@@ -57,6 +73,7 @@ export default () => {
             })
           }
         </Swiper>
+
         <Modal />
       </div>
     );

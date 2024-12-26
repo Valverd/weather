@@ -35,7 +35,7 @@ export default function Modal() {
             }))
     }, [searchCity])
 
-    async function handleCityChoose(city: PropsCityFound){
+    async function handleCityChoose(city: PropsCityFound) {
         await fetch(`https://www.meteosource.com/api/v1/free/point?key=${apiKey}&place_id=${city.place_id}&sections=current&units=metric`).then((res) => res.json())
             .then((data: PropsCity) => {
                 data.place_id = city.place_id
@@ -53,7 +53,7 @@ export default function Modal() {
             className={`fixed inset-0 z-40 flex justify-center items-center transition-all duration-500 ease-in-out ${showModal ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
         >            <div className="absolute inset-0 bg-black opacity-70 z-40" onClick={() => setShowModal(!showModal)}></div>
 
-            <div className="absolute overflow-y-auto m-auto left-0 right-0 top-1/4 z-50 bg-white dark:bg-slate-800 w-1/2 h-1/2 p-6 rounded-lg shadow-lg">
+            <div className="absolute overflow-y-auto m-auto left-0 right-0 top-1/4 z-50 bg-white dark:bg-slate-800 w-1/2 max-[800px]:w-2/3 max-[600px]:w-3/4 max-[450px]:w-5/6 h-1/2 p-6 rounded-lg shadow-lg">
                 <div className="flex justify-between">
                     <h1 className="text-2xl mb-6">Cidades</h1>
                     <IoClose className="inline-block rounded-full p-1 hover:bg-[#eee] dark:hover:bg-[#212d41] cursor-pointer transition duration-300" size={35} onClick={() => setShowModal(!showModal)} />

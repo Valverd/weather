@@ -3,10 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from 'swiper/modules'
 import { Context } from "../../contexts/Context";
 import { useContext, useEffect, useState } from "react";
+import { hour } from "../../types/types";
 
 
 export default function CarouselHourly() {
-    const [hours, setHours] = useState<any[]>()
+    const [hours, setHours] = useState<hour[]>()
     const apiKey = import.meta.env.VITE_API_KEY
     const { cityID } = useContext(Context)
 
