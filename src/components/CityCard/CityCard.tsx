@@ -1,4 +1,4 @@
-import React, { ComponentType, useContext, useEffect, useRef, useState } from 'react'
+import React, { ComponentType, useEffect, useState } from 'react'
 import { PropsCity } from '../../types/types'
 import { IoLocation } from "react-icons/io5";
 import { MdDeviceThermostat } from "react-icons/md";

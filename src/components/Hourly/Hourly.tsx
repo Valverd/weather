@@ -1,5 +1,4 @@
-import { Context } from "../../contexts/Context";
-import React, { ComponentType, useContext, useEffect, useState } from "react";
+import React, { ComponentType, useEffect, useState } from "react";
 import { IoSunnyOutline } from "react-icons/io5";
 import { IoPartlySunnyOutline } from "react-icons/io5";
 import { IoMdCloudOutline } from "react-icons/io";
