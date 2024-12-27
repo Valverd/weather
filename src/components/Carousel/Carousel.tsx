@@ -25,25 +25,17 @@ export default () => {
     return (
       <div className='max-w-7xl mt-4 m-auto'>
         <Swiper
-          modules={[Navigation, EffectCoverflow]}
+          modules={[Navigation, EffectCoverflow, Pagination]}
           spaceBetween={500}
           slidesPerView={1}
-          navigation
+          pagination={{
+            clickable: true
+          }}
           effect='coverflow'
           coverflowEffect={{
             slideShadows: false,
           }}
           breakpoints={{
-            200: {
-              navigation: {
-                enabled: false
-              }
-            },
-            490: {
-              navigation: {
-                enabled: true
-              }
-            },
             850: {
               coverflowEffect: {
                 depth: 1000,

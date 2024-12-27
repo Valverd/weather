@@ -146,7 +146,8 @@ export default function CityCard({ city }: { city: PropsCity }) {
         ${weather}
         cursor-pointer
         shadow-lg
-        mt-10
+        mt-6
+        mb-16
         m-auto
         rounded-lg
         p-4
@@ -159,7 +160,7 @@ export default function CityCard({ city }: { city: PropsCity }) {
                     {icon && React.createElement(icon, { size: 70 })}
                 </div>
             </div>
-            <div className="flex justify-around">
+            <div className="flex justify-around max-[450px]:justify-center">
                 <div className="text-center">
                     <p>Precipitação</p>
                     <p>{city.current.precipitation.total} %</p>

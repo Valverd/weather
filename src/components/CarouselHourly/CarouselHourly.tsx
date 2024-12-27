@@ -24,7 +24,7 @@ export default function CarouselHourly() {
     }, [cityID])
 
     return (
-        <div className='max-w-6xl my-40 m-auto'>
+        <div className='max-w-6xl my-20 m-auto'>
             <Swiper
                 modules={[Navigation]}
                 spaceBetween={30}
