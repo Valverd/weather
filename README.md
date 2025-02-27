@@ -18,6 +18,8 @@ TailwindCSS;
 
 Fetch (para requisições HTTP);
 
+Swiper para criação de Carousel;
+
 API Meteosource;
 
 ## 📸 Preview
